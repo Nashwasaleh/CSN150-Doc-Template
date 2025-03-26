@@ -28,5 +28,15 @@ Note your problems or errors here.  Google any error you may come across, and no
 1. Arduino code will not load on ESP32 Cam.
    Answer: Camera drivers were incorrect I needed to install the driver: [https://www.wch-ic.com/downloads/CH341SER_ZIP.html](https://github.com/martin-ger/esp32_nat_router).  I used file, "CH341SER.ZIP" and it worked.
 
+-----
+# Lab report
+# ESP32 Wi-Fi Scanner
+## Name Nashwa Saleh 
+## Documentation Followed I followed the GitHub Primer + Documentation video and the “Lecture Video - ESP32 Primer + Arduino” to get the project running. 
+## Challenges Faced - Initially had trouble installing Git; resolved by downloading it from git-scm.com.
+                    - Setting up the ESP32 in Arduino IDE required installing the ESP32 board manager and selecting the right COM port.
+                    - Some serial monitor outputs didn’t show Wi-Fi networks at first; fixed by adjusting antenna position and re-uploading the sketch. 
+## Description The ESP32 Wi-Fi Scanner scans nearby Wi-Fi networks and displays their SSIDs and signal strength (RSSI) on the Serial Monitor. This is useful for checking Wi-Fi coverage in an area, debugging IoT devices, and selecting the strongest network.
+
 
 ## Final Report
