@@ -1,42 +1,92 @@
 # Cybersecurity : CSN150-Doc-Template
 
 ## Name of Project
-ESP32 Introduction
+ESP32CAM Camera Setup + Arduino Blink Sketch
 
 ## Purpose
-Set up ESP32 and Arduino enviornment. Execute sketch " Wifiscanner". 
+This lab report includes documentation for two hands-on assignments:
+1. Simulated setup of the ESP32CAM camera firmware.
+2. Arduino setup and simulation of the Blink Sketch on ESP32.
 
-## Equipment
-* [ESP32Cam](https://www.amazon.com/Aideepen-ESP32-CAM-Bluetooth-ESP32-CAM-MB-Arduino/dp/B08P2578LV/ref=sr_1_3?crid=4FY0ECFW0ZX7&keywords=ESP32+Cam&qid=1678902050&sprefix=esp32+cam%2Caps%2C240&sr=8-3)
+Since I do not currently have access to the ESP32CAM hardware or FTDI programmer, the steps are documented as a simulation following official instructions. A placeholder image is submitted as a substitute for the live camera shot.
 
-* [USB Micro Data Cable](https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0711PVX6Z/ref=sr_1_1_sspa?keywords=micro+usb+data+cable&qid=1678902214&sprefix=Micro+USB+data+%2Caps%2C89&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFaU0NaUVZHU1RFUlAmZW5jcnlwdGVkSWQ9QTA3NTA4MDVFVERCS01HVlgxM1YmZW5jcnlwdGVkQWRJZD1BMDE4NTE1NTIwWUdONkdWSzU1M1Amd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
+---
 
-## Links to documentation
+# Assignment 1: ESP32CAM Camera Setup
 
-##### Video 1: 
+## Name
+Nashwa Saleh – CSN 150
 
-##### Other Links: 
+## Documentation Followed
+- https://lastminuteengineers.com/getting-started-with-esp32-cam/
 
+Although I didn’t have the ESP32CAM module or FTDI programmer, I followed the tutorial steps to simulate the firmware setup process.
 
-## Steps I followed
-1. Write the steps you followed here.  This way you can keep track of where you might have messed up if the project does not work. 
+## Objective
+To simulate the process of flashing the camera firmware onto an ESP32CAM module using the Arduino IDE, and visualize the result using a placeholder image in lieu of an actual camera output.
+
+## Equipment (Simulated)
+- ESP32CAM (not available)
+- FTDI programmer (not available)
+- Arduino IDE (installed)
+- Laptop and GitHub for documentation
+- Handwritten name image as camera output
+
+## Steps I Followed
+1. Installed Arduino IDE from the official site: https://www.arduino.cc/en/software
+2. Opened `Preferences` and added this URL to "Additional Board Manager URLs":
+
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+3. Opened Tools → Board Manager and installed “ESP32 by Espressif Systems”.
+4. Selected board: `AI Thinker ESP32-CAM` under Tools → Board.
+5. Loaded the example sketch:
+
+**File → Examples → ESP32 → Camera → CameraWebServer**
+
+6. Simulated connecting ESP32CAM to FTDI programmer and uploading code.
+7. Expected output: Serial Monitor displays IP address for web stream (e.g., http://192.168.1.20/)
 
 ## Problems
-Note your problems or errors here.  Google any error you may come across, and not what you tried (even if it does not work), and what was the final answer. Document your errors and solutions that worked for you.  
+The absence of physical hardware meant I couldn’t verify camera output. To meet assignment criteria, I submitted a handwritten name photo to represent the camera view.
 
-### Example Problem
-1. Arduino code will not load on ESP32 Cam.
-   Answer: Camera drivers were incorrect I needed to install the driver: [https://www.wch-ic.com/downloads/CH341SER_ZIP.html](https://github.com/martin-ger/esp32_nat_router).  I used file, "CH341SER.ZIP" and it worked.
+## Final Output (Simulated)
+A placeholder image of my name and class number was used to simulate the ESP32CAM pointing at myself:
 
------
-# Lab report
-# ESP32 Wi-Fi Scanner
-## Name Nashwa Saleh 
-## Documentation Followed I followed the GitHub Primer + Documentation video and the “Lecture Video - ESP32 Primer + Arduino” to get the project running. 
-## Challenges Faced - Initially had trouble installing Git; resolved by downloading it from git-scm.com.
-                    - Setting up the ESP32 in Arduino IDE required installing the ESP32 board manager and selecting the right COM port.
-                    - Some serial monitor outputs didn’t show Wi-Fi networks at first; fixed by adjusting antenna position and re-uploading the sketch. 
-## Description The ESP32 Wi-Fi Scanner scans nearby Wi-Fi networks and displays their SSIDs and signal strength (RSSI) on the Serial Monitor. This is useful for checking Wi-Fi coverage in an area, debugging IoT devices, and selecting the strongest network.
+![Camera Simulation](images/nashwa_placeholder.jpg)
 
+---
 
-## Final Report
+# Assignment 2: ESP32 Setup + Blink Sketch
+
+## Documentation Followed
+- https://lastminuteengineers.com/esp32-arduino-ide-tutorial/
+
+This assignment demonstrates setup of ESP32 with Arduino IDE and execution of a basic Blink sketch. It simulates the blinking behaviour using pseudocode and explanation.
+
+## Objective
+Set up the ESP32 environment in Arduino IDE and simulate the LED blink sketch. Explain how to control the blink speed by modifying delay values.
+
+## Steps I Followed
+1. Installed the Arduino IDE.
+2. Added the following URL to Arduino Preferences:
+
+3. Installed the ESP32 board package via Tools → Board Manager.
+4. Selected the ESP32 Dev Module board (in simulation).
+5. Opened `File → Examples → 01.Basics → Blink`
+6. Edited the Blink sketch to simulate faster and slower blinking.
+
+## Code Explanation (Simulation)
+
+```cpp
+// Standard Blink Sketch
+void setup() {
+pinMode(LED_BUILTIN, OUTPUT);  // Initialize digital pin as an output
+}
+
+void loop() {
+digitalWrite(LED_BUILTIN, HIGH);  // Turn LED on
+delay(1000);                      // Wait 1 second
+digitalWrite(LED_BUILTIN, LOW);   // Turn LED off
+delay(1000);                      // Wait 1 second
+}
